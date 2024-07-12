@@ -1,0 +1,61 @@
+{
+  "applications": "*",
+  "changelogDate": "20240424084840",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "symbol",
+  "fields": [
+    {
+      "fieldName": "symbolCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "symbolName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Symbol",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hangOrder",
+      "otherEntityRelationshipName": "symbol",
+      "relationshipName": "hangorders",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "hangOrderNew",
+      "otherEntityRelationshipName": "symbol",
+      "relationshipName": "hangordernews",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "matchOrder",
+      "otherEntityRelationshipName": "symbol",
+      "relationshipName": "matchorders",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "matchOrderNew",
+      "otherEntityRelationshipName": "symbol",
+      "relationshipName": "matchordernews",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "orders",
+      "otherEntityRelationshipName": "symbol",
+      "relationshipName": "orders",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

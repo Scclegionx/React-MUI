@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "changelogDate": "20240424084842",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "hang_order_new",
+  "fields": [
+    {
+      "fieldName": "custodyCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "custodyName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "execType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "execPrice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "transTime",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "HangOrderNew",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "symbolCode",
+      "otherEntityName": "symbol",
+      "otherEntityRelationshipName": "hangordernews",
+      "relationshipName": "symbol",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

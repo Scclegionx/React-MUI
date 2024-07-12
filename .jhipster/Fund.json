@@ -1,0 +1,37 @@
+{
+  "applications": "*",
+  "changelogDate": "20240424084839",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "fund",
+  "fields": [
+    {
+      "fieldName": "fundCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fundName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Fund",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "orders",
+      "otherEntityRelationshipName": "fund",
+      "relationshipName": "orders",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

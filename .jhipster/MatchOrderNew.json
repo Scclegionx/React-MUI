@@ -1,0 +1,63 @@
+{
+  "applications": "*",
+  "changelogDate": "20240424084844",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "match_order_new",
+  "fields": [
+    {
+      "fieldName": "custodyCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "custodyName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "grpId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grpName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "side",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "execAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "transTime",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "MatchOrderNew",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "symbolCode",
+      "otherEntityName": "symbol",
+      "otherEntityRelationshipName": "matchordernews",
+      "relationshipName": "symbol",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

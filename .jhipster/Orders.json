@@ -1,0 +1,59 @@
+{
+  "applications": "*",
+  "changelogDate": "20240424084838",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "orders",
+  "fields": [
+    {
+      "fieldName": "timeExcute",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orderType",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "orderState",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "volume",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Orders",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "symbolCode",
+      "otherEntityName": "symbol",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "symbol",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "fundCode",
+      "otherEntityName": "fund",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "fund",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

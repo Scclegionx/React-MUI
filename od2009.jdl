@@ -1,0 +1,100 @@
+entity Orders {
+timeExcute String
+orderType Integer
+orderState Integer
+volume Double
+price Double
+state Integer
+description String
+}
+
+entity Fund {
+fundCode String required
+fundName String required
+description String
+}
+
+entity Symbol {
+symbolCode String required
+symbolName String required
+description String
+}
+
+entity HangOrder {
+custodyCode String required
+custodyName String required
+execType String
+quantity Double
+execPrice BigDecimal
+transTime ZonedDateTime required
+}
+
+entity HangOrderNew {
+custodyCode String required
+custodyName String required
+execType String
+quantity Double
+execPrice BigDecimal
+transTime ZonedDateTime required
+}
+
+entity MatchOrder {
+custodyCode String required
+custodyName String required
+grpId String
+grpName String
+side String
+quantity Double
+price BigDecimal
+execAmount BigDecimal
+transTime ZonedDateTime required
+}
+
+entity MatchOrderNew {
+custodyCode String required
+custodyName String required
+grpId String
+grpName String
+side String
+quantity Double
+price BigDecimal
+execAmount BigDecimal
+transTime ZonedDateTime required
+}
+
+relationship OneToMany {
+  Symbol{hangorders} to HangOrder{Symbol(symbolCode)}
+}
+
+relationship OneToMany {
+  Symbol{hangordernews} to HangOrderNew{Symbol(symbolCode)}
+}
+
+relationship OneToMany {
+  Symbol{matchorders} to MatchOrder{Symbol(symbolCode)}
+}
+
+relationship OneToMany {
+  Symbol{matchordernews} to MatchOrderNew{Symbol(symbolCode)}
+}
+
+relationship OneToMany {
+  Symbol{orders} to Orders{Symbol(symbolCode)}
+}
+
+relationship OneToMany {
+  Fund{orders} to Orders{Fund(fundCode)}
+}
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+paginate Orders, Fund, Symbol, HangOrder, HangOrderNew, MatchOrder, MatchOrderNew  with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
